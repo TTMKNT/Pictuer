@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  tempPicture
+//  PictureApp
 //
-//  Created by くら〜〜く on 2018/04/27.
+//  Created by くら〜〜く on 2018/04/29.
 //  Copyright © 2018年 くら〜〜く. All rights reserved.
 //
 
