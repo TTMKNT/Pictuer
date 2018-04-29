@@ -15,10 +15,6 @@
 		4B82ABF720932827008ED868 /* MVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B82ABF620932827008ED868 /* MVC.storyboard */; };
 		4B82ABF920932873008ED868 /* AGVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B82ABF820932873008ED868 /* AGVC.storyboard */; };
 		4B82ABFB2093287F008ED868 /* AVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B82ABFA2093287F008ED868 /* AVC.storyboard */; };
-		4B82AC002093807A008ED868 /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82ABFC20938079008ED868 /* AssetViewController.swift */; };
-		4B82AC012093807A008ED868 /* GridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82ABFD2093807A008ED868 /* GridViewCell.swift */; };
-		4B82AC022093807A008ED868 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82ABFE2093807A008ED868 /* MasterViewController.swift */; };
-		4B82AC032093807A008ED868 /* AssetGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82ABFF2093807A008ED868 /* AssetGridViewController.swift */; };
 		CCC624002095959B00129098 /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC623FF2095959B00129098 /* AssetViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,10 +29,6 @@
 		4B82ABF620932827008ED868 /* MVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVC.storyboard; sourceTree = "<group>"; };
 		4B82ABF820932873008ED868 /* AGVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AGVC.storyboard; sourceTree = "<group>"; };
 		4B82ABFA2093287F008ED868 /* AVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AVC.storyboard; sourceTree = "<group>"; };
-		4B82ABFC20938079008ED868 /* AssetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssetViewController.swift; path = ../../../Downloads/ExampleappusingPhotosframework/Shared/AssetViewController.swift; sourceTree = "<group>"; };
-		4B82ABFD2093807A008ED868 /* GridViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridViewCell.swift; path = ../../../Downloads/ExampleappusingPhotosframework/Shared/GridViewCell.swift; sourceTree = "<group>"; };
-		4B82ABFE2093807A008ED868 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterViewController.swift; path = ../../../Downloads/ExampleappusingPhotosframework/Shared/MasterViewController.swift; sourceTree = "<group>"; };
-		4B82ABFF2093807A008ED868 /* AssetGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssetGridViewController.swift; path = ../../../Downloads/ExampleappusingPhotosframework/Shared/AssetGridViewController.swift; sourceTree = "<group>"; };
 		CCC623FF2095959B00129098 /* AssetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,10 +71,6 @@
 				4B82ABEB20932725008ED868 /* Assets.xcassets */,
 				4B82ABED20932725008ED868 /* LaunchScreen.storyboard */,
 				4B82ABF020932725008ED868 /* Info.plist */,
-				4B82ABFF2093807A008ED868 /* AssetGridViewController.swift */,
-				4B82ABFC20938079008ED868 /* AssetViewController.swift */,
-				4B82ABFD2093807A008ED868 /* GridViewCell.swift */,
-				4B82ABFE2093807A008ED868 /* MasterViewController.swift */,
 				CCC623FF2095959B00129098 /* AssetViewController.swift */,
 			);
 			path = tempPicture;
@@ -162,11 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B82AC022093807A008ED868 /* MasterViewController.swift in Sources */,
 				4B82ABE720932724008ED868 /* ViewController.swift in Sources */,
-				4B82AC002093807A008ED868 /* AssetViewController.swift in Sources */,
-				4B82AC032093807A008ED868 /* AssetGridViewController.swift in Sources */,
-				4B82AC012093807A008ED868 /* GridViewCell.swift in Sources */,
 				4B82ABE520932724008ED868 /* AppDelegate.swift in Sources */,
 				CCC624002095959B00129098 /* AssetViewController.swift in Sources */,
 			);
