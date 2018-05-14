@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Fp-m4-LHW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Asset View Controller-->
+        <scene sceneID="uJ7-jW-CJ3">
+            <objects>
+                <viewController storyboardIdentifier="AVC" id="3Fp-m4-LHW" customClass="AssetViewController" customModule="PictureApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bws-Yz-N6K"/>
+                        <viewControllerLayoutGuide type="bottom" id="SvF-Y9-b8r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WWY-Bs-XUJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cx2-im-egP">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3i8-Kp-A1S" customClass="PHLivePhotoView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SvF-Y9-b8r" firstAttribute="top" secondItem="3i8-Kp-A1S" secondAttribute="bottom" id="9MN-cF-W8v"/>
+                            <constraint firstItem="Cx2-im-egP" firstAttribute="top" secondItem="WWY-Bs-XUJ" secondAttribute="top" id="OUk-Xa-9NK"/>
+                            <constraint firstAttribute="trailing" secondItem="3i8-Kp-A1S" secondAttribute="trailing" id="SNZ-jf-jQf"/>
+                            <constraint firstAttribute="trailing" secondItem="Cx2-im-egP" secondAttribute="trailing" id="ZlB-Ct-XFc"/>
+                            <constraint firstAttribute="bottom" secondItem="Cx2-im-egP" secondAttribute="bottom" id="bnx-Pl-ExU"/>
+                            <constraint firstItem="3i8-Kp-A1S" firstAttribute="leading" secondItem="WWY-Bs-XUJ" secondAttribute="leading" id="ijG-M6-FPO"/>
+                            <constraint firstItem="3i8-Kp-A1S" firstAttribute="top" secondItem="Bws-Yz-N6K" secondAttribute="bottom" id="jZr-U1-Aik"/>
+                            <constraint firstItem="Cx2-im-egP" firstAttribute="leading" secondItem="WWY-Bs-XUJ" secondAttribute="leading" id="ooz-pE-6S7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5f2-ck-q7y"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Uzz-TK-jem">
+                        <nil key="title"/>
+                        <progressView key="titleView" hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progressViewStyle="bar" progress="0.5" id="kFz-L3-kZB" userLabel="Progress View">
+                            <rect key="frame" x="12" y="21" width="532.5" height="2.5"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </progressView>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="2Rr-7Y-6il">
+                            <connections>
+                                <action selector="editAsset:" destination="3Fp-m4-LHW" id="FCw-uV-5jf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="editButton" destination="2Rr-7Y-6il" id="lUT-fv-ag9"/>
+                        <outlet property="favoriteButton" destination="Jmr-No-A6Z" id="cXi-GZ-0fF"/>
+                        <outlet property="imageView" destination="Cx2-im-egP" id="9SZ-EU-wIC"/>
+                        <outlet property="livePhotoView" destination="3i8-Kp-A1S" id="86X-we-npF"/>
+                        <outlet property="playButton" destination="5l0-Jy-s8t" id="ZMo-hd-7nh"/>
+                        <outlet property="progressView" destination="kFz-L3-kZB" id="kHY-dC-hEb"/>
+                        <outlet property="space" destination="Rdh-kc-YlH" id="dmo-hq-8kh"/>
+                        <outlet property="trashButton" destination="V1N-VD-cuw" id="bvB-Pq-e7y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="myS-Sn-lOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem systemItem="play" id="5l0-Jy-s8t">
+                    <connections>
+                        <action selector="play:" destination="3Fp-m4-LHW" id="yVB-ny-eQu"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem style="plain" systemItem="flexibleSpace" id="Rdh-kc-YlH"/>
+                <barButtonItem systemItem="trash" id="V1N-VD-cuw">
+                    <connections>
+                        <action selector="removeAsset:" destination="3Fp-m4-LHW" id="c7r-mP-VGM"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem title="♡" id="Jmr-No-A6Z">
+                    <connections>
+                        <action selector="toggleFavorite:" destination="3Fp-m4-LHW" id="d7r-ME-QzX"/>
+                    </connections>
+                </barButtonItem>
+            </objects>
+            <point key="canvasLocation" x="1242" y="501"/>
+        </scene>
+    </scenes>
+</document>

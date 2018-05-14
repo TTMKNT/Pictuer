@@ -1,79 +1,83 @@
+
 /*
-	Copyright (C) 2017 Apple Inc. All Rights Reserved.
-	See LICENSE.txt for this sample’s licensing information
-	
-	Abstract:
-	Manages the top-level table view, a list of photo collections.
+ Copyright (C) 2017 Apple Inc. All Rights Reserved.
+ See LICENSE.txt for this sample’s licensing information
+ 
+ Abstract:
+ Manages the top-level table view, a list of photo collections.
  */
 
 
 import UIKit
 import Photos
 
-class MasterViewController: UITableViewController {
-
+class MasterViewController: UITableViewController{
+    
     // MARK: Types for managing sections, cell and segue identifiers
     enum Section: Int {
         case allPhotos = 0
         case smartAlbums
         case userCollections
-
+        
         static let count = 3
     }
-
+    
+    
+    //せるのIDを定義
     enum CellIdentifier: String {
         case allPhotos, collection
     }
-
+    
+    //セグエのIDを定義
     enum SegueIdentifier: String {
         case showAllPhotos
         case showCollection
     }
-
-    //test
     
     // MARK: Properties
+    //使う要素の定義
     var allPhotos: PHFetchResult<PHAsset>!
     var smartAlbums: PHFetchResult<PHAssetCollection>!
     var userCollections: PHFetchResult<PHCollection>!
     let sectionLocalizedTitles = ["", NSLocalizedString("Smart Albums", comment: ""), NSLocalizedString("Albums", comment: "")]
-
-    // MARK: UIViewController / Lifecycle
     
+    // MARK: UIViewController / Lifecycle
+    //ロード時に呼ばれる
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //ボタン機能のインスタンス化？
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addAlbum))
+        //右上にaddボタンを追加
         self.navigationItem.rightBarButtonItem = addButton
-
-
+        
+        
         // Create a PHFetchResult object for each section in the table view.
         let allPhotosOptions = PHFetchOptions()
-        allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         allPhotos = PHAsset.fetchAssets(with: allPhotosOptions)
         smartAlbums = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .albumRegular, options: nil)
         userCollections = PHCollectionList.fetchTopLevelUserCollections(with: nil)
-
+        
         PHPhotoLibrary.shared().register(self)
-
+        
     }
-
+    
     deinit {
         PHPhotoLibrary.shared().unregisterChangeObserver(self)
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
         super.viewWillAppear(animated)
     }
-
-    func addAlbum(_ sender: AnyObject) {
-
+    
+    @objc func addAlbum(_ sender: AnyObject) {
         let alertController = UIAlertController(title: NSLocalizedString("New Album", comment: ""), message: nil, preferredStyle: .alert)
         alertController.addTextField { textField in
             textField.placeholder = NSLocalizedString("Album Name", comment: "")
         }
-
+        
         alertController.addAction(UIAlertAction(title: NSLocalizedString("Create", comment: ""), style: .default) { action in
             let textField = alertController.textFields!.first!
             if let title = textField.text, !title.isEmpty {
@@ -87,98 +91,113 @@ class MasterViewController: UITableViewController {
         })
         self.present(alertController, animated: true, completion: nil)
     }
-
-
+    
+    
     // MARK: Segues
-
+    //画面遷移行う関数
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         guard let destination = (segue.destination as? UINavigationController)?.topViewController as? AssetGridViewController
             else { fatalError("unexpected view controller for segue") }
         let cell = sender as! UITableViewCell
-
+        
         destination.title = cell.textLabel?.text
-
         switch SegueIdentifier(rawValue: segue.identifier!)! {
-            case .showAllPhotos:
-                destination.fetchResult = allPhotos
-            case .showCollection:
-
-                // get the asset collection for the selected row
-                let indexPath = tableView.indexPath(for: cell)!
-                let collection: PHCollection
-                switch Section(rawValue: indexPath.section)! {
-                    case .smartAlbums:
-                        collection = smartAlbums.object(at: indexPath.row)
-                    case .userCollections:
-                        collection = userCollections.object(at: indexPath.row)
-                    default: return // not reached; all photos section already handled by other segue
-                }
-
-                // configure the view controller with the asset collection
-                guard let assetCollection = collection as? PHAssetCollection
-                    else { fatalError("expected asset collection") }
-                destination.fetchResult = PHAsset.fetchAssets(in: assetCollection, options: nil)
-                destination.assetCollection = assetCollection
+        case .showAllPhotos:
+            destination.fetchResult = allPhotos
+        case .showCollection:
+            
+            // get the asset collection for the selected row
+            let indexPath = tableView.indexPath(for: cell)!
+            let collection: PHCollection
+            switch Section(rawValue: indexPath.section)! {
+            case .smartAlbums:
+                collection = smartAlbums.object(at: indexPath.row)
+            case .userCollections:
+                collection = userCollections.object(at: indexPath.row)
+            default: return // not reached; all photos section already handled by other segue
+            }
+            
+            // configure the view controller with the asset collection
+            guard let assetCollection = collection as? PHAssetCollection
+                else { fatalError("expected asset collection") }
+            destination.fetchResult = PHAsset.fetchAssets(in: assetCollection, options: nil)
+            destination.assetCollection = assetCollection
         }
     }
-
+    
     // MARK: Table View
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return Section.count
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch Section(rawValue: section)! {
-            case .allPhotos: return 1
-            case .smartAlbums: return smartAlbums.count
-            case .userCollections: return userCollections.count
+        case .allPhotos: return 1
+        case .smartAlbums: return smartAlbums.count
+        case .userCollections: return userCollections.count
+            
         }
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch Section(rawValue: indexPath.section)! {
-            case .allPhotos:
-                let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.allPhotos.rawValue, for: indexPath)
-                cell.textLabel!.text = NSLocalizedString("All Photos", comment: "")
-                return cell
-
-            case .smartAlbums:
-                let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.collection.rawValue, for: indexPath)
-                let collection = smartAlbums.object(at: indexPath.row)
-                cell.textLabel!.text = collection.localizedTitle
-                return cell
-
-            case .userCollections:
-                let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.collection.rawValue, for: indexPath)
-                let collection = userCollections.object(at: indexPath.row)
-                cell.textLabel!.text = collection.localizedTitle
-                return cell
+        case .allPhotos:
+            //                let cell = tableView.dequeueReusableCell(withIdentifier:                              CellIdentifier.allPhotos.rawValue, for: indexPath)
+            //                cell.textLabel!.text = NSLocalizedString("All Photos", comment: "")
+            //
+            let cell = tableView.dequeueReusableCell(withIdentifier: "allPhotos") as! CustomTableViewCell;
+            
+            cell.title!.text = "All Photos"
+            
+            return cell
+            
+        case .smartAlbums:
+            // let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.collection.rawValue, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "collection", for : indexPath) as! CustomTableViewCell;
+            
+            let collection = smartAlbums.object(at: indexPath.row)
+            
+            //cell.textLabel!.text = collec"tion.localizedTitle;
+            print("smart\(collection.localizedTitle)");
+            //                cell.title.text = collection.localizedTitle;
+            guard let temp = collection.localizedTitle else {return  cell}
+            cell.title?.text = temp;
+            return cell
+            
+        case .userCollections:
+            //       let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.collection.rawValue, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "collection",for : indexPath) as! CustomTableViewCell;
+            let collection = userCollections.object(at: indexPath.row)
+            print("user\(collection.localizedTitle)");
+            //cell.textLabel!.text = collection.localizedTitle
+            //cell.title!.text = collection.localizedTitle;
+            return cell
         }
     }
-
+    
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sectionLocalizedTitles[section]
     }
-
+    
 }
 
 // MARK: PHPhotoLibraryChangeObserver
 extension MasterViewController: PHPhotoLibraryChangeObserver {
-
+    
     func photoLibraryDidChange(_ changeInstance: PHChange) {
         // Change notifications may be made on a background queue. Re-dispatch to the
         // main queue before acting on the change as we'll be updating the UI.
         DispatchQueue.main.sync {
             // Check each of the three top-level fetches for changes.
-
+            
             if let changeDetails = changeInstance.changeDetails(for: allPhotos) {
-                // Update the cached fetch result. 
-                allPhotos = changeDetails.fetchResultAfterChanges 
+                // Update the cached fetch result.
+                allPhotos = changeDetails.fetchResultAfterChanges
                 // (The table row for this one doesn't need updating, it always says "All Photos".)
             }
-
+            
             // Update the cached fetch results, and reload the table sections to match.
             if let changeDetails = changeInstance.changeDetails(for: smartAlbums) {
                 smartAlbums = changeDetails.fetchResultAfterChanges
@@ -188,7 +207,7 @@ extension MasterViewController: PHPhotoLibraryChangeObserver {
                 userCollections = changeDetails.fetchResultAfterChanges
                 tableView.reloadSections(IndexSet(integer: Section.userCollections.rawValue), with: .automatic)
             }
-
+            
         }
     }
 }
