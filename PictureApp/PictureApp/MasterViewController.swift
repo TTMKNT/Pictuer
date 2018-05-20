@@ -143,34 +143,35 @@ class MasterViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch Section(rawValue: indexPath.section)! {
         case .allPhotos:
-            //                let cell = tableView.dequeueReusableCell(withIdentifier:                              CellIdentifier.allPhotos.rawValue, for: indexPath)
-            //                cell.textLabel!.text = NSLocalizedString("All Photos", comment: "")
-            //
-            let cell = tableView.dequeueReusableCell(withIdentifier: "allPhotos") as! CustomTableViewCell;
+                        let cell = tableView.dequeueReusableCell(withIdentifier:                              CellIdentifier.allPhotos.rawValue, for: indexPath)
+                      cell.textLabel!.text = NSLocalizedString("All Photos", comment: "")
             
-            cell.title!.text = "All Photos"
-            
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "allPhotos") as! CustomTableViewCell;
+//
+//            cell.title!.text = "All Photos"
+//
             return cell
             
         case .smartAlbums:
-            // let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.collection.rawValue, for: indexPath)
-            let cell = tableView.dequeueReusableCell(withIdentifier: "collection", for : indexPath) as! CustomTableViewCell;
-            
+             let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.collection.rawValue, for: indexPath)
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "collection", for : indexPath) as! CustomTableViewCell;
+//
             let collection = smartAlbums.object(at: indexPath.row)
-            
-            //cell.textLabel!.text = collec"tion.localizedTitle;
-            print("smart\(collection.localizedTitle)");
-            //                cell.title.text = collection.localizedTitle;
-            guard let temp = collection.localizedTitle else {return  cell}
-            cell.title?.text = temp;
-            return cell
+//
+//            //cell.textLabel!.text = collec"tion.localizedTitle;
+//            print("smart\(collection.localizedTitle)");
+//            //                cell.title.text = collection.localizedTitle;
+//            guard let temp = collection.localizedTitle else {return  cell}
+//            cell.title?.text = temp;
+             cell.textLabel!.text = collection.localizedTitle;
+             return cell
             
         case .userCollections:
-            //       let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.collection.rawValue, for: indexPath)
-            let cell = tableView.dequeueReusableCell(withIdentifier: "collection",for : indexPath) as! CustomTableViewCell;
+                   let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.collection.rawValue, for: indexPath)
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "collection",for : indexPath) as! CustomTableViewCell;
             let collection = userCollections.object(at: indexPath.row)
-            print("user\(collection.localizedTitle)");
-            //cell.textLabel!.text = collection.localizedTitle
+//            print("user\(collection.localizedTitle)");
+            cell.textLabel!.text = collection.localizedTitle
             //cell.title!.text = collection.localizedTitle;
             return cell
         }
