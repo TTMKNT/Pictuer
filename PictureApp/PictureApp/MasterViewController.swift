@@ -141,43 +141,44 @@ class MasterViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        self.tableView.rowHeight = 120
         switch Section(rawValue: indexPath.section)! {
         case .allPhotos:
-                        let cell = tableView.dequeueReusableCell(withIdentifier:                              CellIdentifier.allPhotos.rawValue, for: indexPath)
-                      cell.textLabel!.text = NSLocalizedString("All Photos", comment: "")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "allPhotos",for : indexPath);
+            cell.textLabel!.text = NSLocalizedString("All Photos", comment: "")
             
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "allPhotos") as! CustomTableViewCell;
-//
-//            cell.title!.text = "All Photos"
-//
             return cell
             
         case .smartAlbums:
-             let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.collection.rawValue, for: indexPath)
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "collection", for : indexPath) as! CustomTableViewCell;
-//
             let collection = smartAlbums.object(at: indexPath.row)
-//
-//            //cell.textLabel!.text = collec"tion.localizedTitle;
-//            print("smart\(collection.localizedTitle)");
-//            //                cell.title.text = collection.localizedTitle;
-//            guard let temp = collection.localizedTitle else {return  cell}
-//            cell.title?.text = temp;
-             cell.textLabel!.text = collection.localizedTitle;
-             return cell
+            //let cell = UITableViewCell(style: .default, reuseIdentifier: "collection");
+            let cell = tableView.dequeueReusableCell(withIdentifier: "collection", for: indexPath);
+            cell.textLabel!.text = collection.localizedTitle;
+            //画像を全て取得
+            let assets = PHAsset.fetchAssets(in: collection, options: nil)
+            
+            let options = PHFetchOptions();
+            let result = PHAsset.fetchAssets(with: .image, options: options);
+            if let asset = assets.firstObject {
+                let manager: PHImageManager = PHImageManager()
+                manager.requestImage(for: asset,
+                                     targetSize: CGSize(width:100,height:100),
+                                     contentMode: .aspectFill, options: nil,
+                                     resultHandler:{image,options in
+                                        cell.imageView!.image = image;
+                })
+            }
+            return cell
             
         case .userCollections:
-                   let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.collection.rawValue, for: indexPath)
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "collection",for : indexPath) as! CustomTableViewCell;
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.collection.rawValue,for : indexPath);
             let collection = userCollections.object(at: indexPath.row)
-//            print("user\(collection.localizedTitle)");
+            print("user\(collection.localizedTitle)");
             cell.textLabel!.text = collection.localizedTitle
             //cell.title!.text = collection.localizedTitle;
             return cell
         }
     }
-    
-    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sectionLocalizedTitles[section]
     }
