@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F76E1B37209B31370008DC73 /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76E1B36209B31370008DC73 /* ExtensionViewController.swift */; };
+		F7AAA7C820BBE5A5000C568D /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AAA7C720BBE5A5000C568D /* ExtensionViewController.swift */; };
 		F7D34B9C209A9FC300B8F448 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D34B9B209A9FC300B8F448 /* AppDelegate.swift */; };
 		F7D34B9E209A9FC300B8F448 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D34B9D209A9FC300B8F448 /* ViewController.swift */; };
 		F7D34BA1209A9FC300B8F448 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7D34B9F209A9FC300B8F448 /* Main.storyboard */; };
@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F76E1B36209B31370008DC73 /* ExtensionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionViewController.swift; path = "../../Downloads/Part3_App/Chapter19/Section19-4/avCapturePhoto/avCapturePhoto/ExtensionViewController.swift"; sourceTree = "<group>"; };
+		F7AAA7C720BBE5A5000C568D /* ExtensionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
 		F7D34B98209A9FC300B8F448 /* camera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = camera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7D34B9B209A9FC300B8F448 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7D34B9D209A9FC300B8F448 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,9 +60,9 @@
 			children = (
 				F7D34B9B209A9FC300B8F448 /* AppDelegate.swift */,
 				F7D34B9D209A9FC300B8F448 /* ViewController.swift */,
-				F76E1B36209B31370008DC73 /* ExtensionViewController.swift */,
 				F7D34B9F209A9FC300B8F448 /* Main.storyboard */,
 				F7D34BA2209A9FC500B8F448 /* Assets.xcassets */,
+				F7AAA7C720BBE5A5000C568D /* ExtensionViewController.swift */,
 				F7D34BAD209AFF9100B8F448 /* maru@2x.png */,
 				F7D34BA4209A9FC500B8F448 /* LaunchScreen.storyboard */,
 				F7D34BA7209A9FC500B8F448 /* Info.plist */,
@@ -144,7 +144,7 @@
 			files = (
 				F7D34B9E209A9FC300B8F448 /* ViewController.swift in Sources */,
 				F7D34B9C209A9FC300B8F448 /* AppDelegate.swift in Sources */,
-				F76E1B37209B31370008DC73 /* ExtensionViewController.swift in Sources */,
+				F7AAA7C820BBE5A5000C568D /* ExtensionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
