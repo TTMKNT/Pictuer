@@ -146,7 +146,7 @@ class MasterViewController: UITableViewController{
         case .allPhotos:
             let cell = tableView.dequeueReusableCell(withIdentifier: "allPhotos",for : indexPath);
             cell.textLabel!.text = NSLocalizedString("All Photos", comment: "")
-            
+          
             return cell
             
         case .smartAlbums:
@@ -165,7 +165,10 @@ class MasterViewController: UITableViewController{
                                      targetSize: CGSize(width:100,height:100),
                                      contentMode: .aspectFill, options: nil,
                                      resultHandler:{image,options in
+                                        cell.imageView?.sizeThatFits(CGSize(width:100,height:100));
                                         cell.imageView!.image = image;
+                                        
+                                        
                 })
             }
             return cell
