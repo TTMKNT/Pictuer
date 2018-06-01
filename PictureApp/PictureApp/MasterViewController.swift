@@ -165,8 +165,8 @@ class MasterViewController: UITableViewController{
                                      targetSize: CGSize(width:100,height:100),
                                      contentMode: .aspectFill, options: nil,
                                      resultHandler:{image,options in
-                                        cell.imageView?.sizeThatFits(CGSize(width:100,height:100));
                                         cell.imageView!.image = image;
+                                    
                                         
                                         
                 })

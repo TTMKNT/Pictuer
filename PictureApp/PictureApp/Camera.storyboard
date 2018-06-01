@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s30-8Z-cc9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,29 +10,66 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="xsT-OQ-uhA">
+        <!--Cam View Controller-->
+        <scene sceneID="Rim-o4-m31">
             <objects>
-                <viewController id="NHq-wu-tat" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="E97-Xz-Sng">
+                <viewController id="s30-8Z-cc9" customClass="CamViewController" customModule="PictureApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hze-pP-8Rj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsw-Sw-ilS">
-                                <rect key="frame" x="152" y="148" width="42" height="21"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DeZ-j4-cTX">
+                                <rect key="frame" x="1" y="0.0" width="374" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rGo-5f-FxV">
+                                        <rect key="frame" x="-1" y="623" width="374" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <items>
+                                            <barButtonItem systemItem="action" id="Zh3-dB-rCw">
+                                                <connections>
+                                                    <action selector="shareAction:" destination="s30-8Z-cc9" id="uKe-0f-UlJ"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="cY0-bD-VVR"/>
+                                            <barButtonItem title="Item" image="icon_102440_32" landscapeImage="icon_102440_32" largeContentSizeImage="icon_102440_32" id="c7W-sY-UQb">
+                                                <inset key="largeContentSizeImageInsets" minX="0.0" minY="0.0" maxX="27" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="changedevice:" destination="s30-8Z-cc9" id="0kd-Fb-MiR"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxF-vy-0a2" customClass="SwiftyCamButton" customModule="camera">
+                                <rect key="frame" x="134" y="540" width="107" height="107"/>
+                                <state key="normal" backgroundImage="maru"/>
+                                <connections>
+                                    <action selector="takephoto:" destination="s30-8Z-cc9" eventType="touchUpInside" id="yVF-84-IXr"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="XvC-Jd-Ifh"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NXL-wD-zfZ" firstAttribute="bottom" secondItem="QxF-vy-0a2" secondAttribute="bottom" constant="20" id="5DJ-vE-mKd"/>
+                            <constraint firstItem="QxF-vy-0a2" firstAttribute="centerX" secondItem="Hze-pP-8Rj" secondAttribute="centerX" id="7un-Lb-L4W"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NXL-wD-zfZ"/>
                     </view>
+                    <connections>
+                        <outlet property="previewView" destination="DeZ-j4-cTX" id="5Iz-FE-sZm"/>
+                        <outlet property="shutterButton" destination="QxF-vy-0a2" id="79E-dR-r8b"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yUu-Qz-SAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dPY-oB-tjJ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="124" y="194"/>
+            <point key="canvasLocation" x="399" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_102440_32" width="32" height="32"/>
+        <image name="maru" width="107" height="107"/>
+    </resources>
 </document>

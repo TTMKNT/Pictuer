@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController{
+class CamViewController: UIViewController{
 
     // プレビュー用のビューとOutlet接続しておく
     @IBOutlet weak var previewView: UIView!
@@ -76,7 +76,7 @@ class ViewController: UIViewController{
             captureSetting.isAutoStillImageStabilizationEnabled = true
             captureSetting.isHighResolutionPhotoEnabled = false
             // キャプチャのイメージ処理はデリゲートに任せる
-           photoOutputObj.capturePhoto(with: captureSetting, delegate: self)
+            photoOutputObj.capturePhoto(with: captureSetting, delegate: self as! AVCapturePhotoCaptureDelegate)
         } else {
             // カメラの利用を許可しなかったにも関わらずボタンをタップした（初回起動時のみ）
             showAlert(appName: "カメラ")

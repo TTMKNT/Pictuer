@@ -8,7 +8,7 @@
 import Photos
 
 // デリゲート部分を拡張する
-extension ViewController:AVCapturePhotoCaptureDelegate {
+extension CamViewController:AVCapturePhotoCaptureDelegate {
     
     // 映像をキャプチャする
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {

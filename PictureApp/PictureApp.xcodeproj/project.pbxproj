@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B02D57320C1473C00AA52E7 /* camera-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B02D57220C1473C00AA52E7 /* camera-7.png */; };
+		4B02D57520C1477200AA52E7 /* list-simple-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B02D57420C1477200AA52E7 /* list-simple-7.png */; };
 		4B95651920959F7F00F84294 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95651820959F7F00F84294 /* AppDelegate.swift */; };
 		4B95651E20959F7F00F84294 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B95651C20959F7F00F84294 /* Main.storyboard */; };
 		4B95652020959F8000F84294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B95651F20959F8000F84294 /* Assets.xcassets */; };
 		4B95652320959F8000F84294 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B95652120959F8000F84294 /* LaunchScreen.storyboard */; };
+		4BBE4FC320BBE96C004C41E0 /* CamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE4FC220BBE96C004C41E0 /* CamViewController.swift */; };
+		4BBE4FC520BBE991004C41E0 /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE4FC420BBE990004C41E0 /* ExtensionViewController.swift */; };
 		4BC1F60420A96AF600AE3A97 /* AGVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC1F60120A96AF500AE3A97 /* AGVC.storyboard */; };
 		4BC1F60520A96AF600AE3A97 /* AVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC1F60220A96AF600AE3A97 /* AVC.storyboard */; };
 		4BC1F60620A96AF600AE3A97 /* MVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC1F60320A96AF600AE3A97 /* MVC.storyboard */; };
@@ -23,12 +27,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B02D57220C1473C00AA52E7 /* camera-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-7.png"; sourceTree = "<group>"; };
+		4B02D57420C1477200AA52E7 /* list-simple-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-simple-7.png"; sourceTree = "<group>"; };
 		4B95651520959F7F00F84294 /* PictureApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictureApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B95651820959F7F00F84294 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B95651D20959F7F00F84294 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B95651F20959F8000F84294 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B95652220959F8000F84294 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B95652420959F8000F84294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BBE4FC220BBE96C004C41E0 /* CamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CamViewController.swift; path = ../../camera/camera/CamViewController.swift; sourceTree = "<group>"; };
+		4BBE4FC420BBE990004C41E0 /* ExtensionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionViewController.swift; path = ../../camera/camera/ExtensionViewController.swift; sourceTree = "<group>"; };
 		4BC1F60120A96AF500AE3A97 /* AGVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AGVC.storyboard; sourceTree = "<group>"; };
 		4BC1F60220A96AF600AE3A97 /* AVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AVC.storyboard; sourceTree = "<group>"; };
 		4BC1F60320A96AF600AE3A97 /* MVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MVC.storyboard; sourceTree = "<group>"; };
@@ -77,10 +85,14 @@
 				4BC1F60720A96F0D00AE3A97 /* CustomTableViewCell.swift */,
 				4BEF50DB2095A21C00938BBA /* GridViewCell.swift */,
 				4B95651C20959F7F00F84294 /* Main.storyboard */,
+				4B02D57420C1477200AA52E7 /* list-simple-7.png */,
 				4BC1F60120A96AF500AE3A97 /* AGVC.storyboard */,
 				4BC1F60220A96AF600AE3A97 /* AVC.storyboard */,
 				4BC1F60320A96AF600AE3A97 /* MVC.storyboard */,
 				4B95651F20959F8000F84294 /* Assets.xcassets */,
+				4B02D57220C1473C00AA52E7 /* camera-7.png */,
+				4BBE4FC420BBE990004C41E0 /* ExtensionViewController.swift */,
+				4BBE4FC220BBE96C004C41E0 /* CamViewController.swift */,
 				4B95652120959F8000F84294 /* LaunchScreen.storyboard */,
 				4B95652420959F8000F84294 /* Info.plist */,
 				F72C62422095B7C1000061D0 /* Camera.storyboard */,
@@ -147,9 +159,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B95652320959F8000F84294 /* LaunchScreen.storyboard in Resources */,
+				4B02D57520C1477200AA52E7 /* list-simple-7.png in Resources */,
 				4BC1F60620A96AF600AE3A97 /* MVC.storyboard in Resources */,
 				4BC1F60420A96AF600AE3A97 /* AGVC.storyboard in Resources */,
 				F72C62432095B7C1000061D0 /* Camera.storyboard in Resources */,
+				4B02D57320C1473C00AA52E7 /* camera-7.png in Resources */,
 				4B95652020959F8000F84294 /* Assets.xcassets in Resources */,
 				4B95651E20959F7F00F84294 /* Main.storyboard in Resources */,
 				4BC1F60520A96AF600AE3A97 /* AVC.storyboard in Resources */,
@@ -167,6 +181,8 @@
 				4BEF50E42095A21D00938BBA /* MasterViewController.swift in Sources */,
 				4BEF50E12095A21D00938BBA /* GridViewCell.swift in Sources */,
 				4BEF50DF2095A21D00938BBA /* AssetViewController.swift in Sources */,
+				4BBE4FC520BBE991004C41E0 /* ExtensionViewController.swift in Sources */,
+				4BBE4FC320BBE96C004C41E0 /* CamViewController.swift in Sources */,
 				4BEF50E32095A21D00938BBA /* AssetGridViewController.swift in Sources */,
 				4B95651920959F7F00F84294 /* AppDelegate.swift in Sources */,
 			);
