@@ -23,8 +23,6 @@
 		4BEF50E12095A21D00938BBA /* GridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF50DB2095A21C00938BBA /* GridViewCell.swift */; };
 		4BEF50E32095A21D00938BBA /* AssetGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF50DD2095A21D00938BBA /* AssetGridViewController.swift */; };
 		4BEF50E42095A21D00938BBA /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF50DE2095A21D00938BBA /* MasterViewController.swift */; };
-		4BF71ECF20C51FE600282E0F /* temp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF71ECE20C51FE600282E0F /* temp.storyboard */; };
-		CCE554D320C5223F0008B6FB /* temp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE554D220C5223F0008B6FB /* temp.storyboard */; };
 		F72C62432095B7C1000061D0 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F72C62422095B7C1000061D0 /* Camera.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -47,8 +45,6 @@
 		4BEF50DB2095A21C00938BBA /* GridViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewCell.swift; sourceTree = "<group>"; };
 		4BEF50DD2095A21D00938BBA /* AssetGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGridViewController.swift; sourceTree = "<group>"; };
 		4BEF50DE2095A21D00938BBA /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		4BF71ECE20C51FE600282E0F /* temp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = temp.storyboard; sourceTree = "<group>"; };
-		CCE554D220C5223F0008B6FB /* temp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = temp.storyboard; sourceTree = "<group>"; };
 		F72C62422095B7C1000061D0 /* Camera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,7 +62,6 @@
 		4B95650C20959F7E00F84294 = {
 			isa = PBXGroup;
 			children = (
-				CCE554D220C5223F0008B6FB /* temp.storyboard */,
 				4B95651720959F7F00F84294 /* PictureApp */,
 				4B95651620959F7F00F84294 /* Products */,
 			);
@@ -90,7 +85,6 @@
 				4BC1F60720A96F0D00AE3A97 /* CustomTableViewCell.swift */,
 				4BEF50DB2095A21C00938BBA /* GridViewCell.swift */,
 				4B95651C20959F7F00F84294 /* Main.storyboard */,
-				4BF71ECE20C51FE600282E0F /* temp.storyboard */,
 				4B02D57420C1477200AA52E7 /* list-simple-7.png */,
 				4BC1F60120A96AF500AE3A97 /* AGVC.storyboard */,
 				4BC1F60220A96AF600AE3A97 /* AVC.storyboard */,
@@ -172,8 +166,6 @@
 				4B02D57320C1473C00AA52E7 /* camera-7.png in Resources */,
 				4B95652020959F8000F84294 /* Assets.xcassets in Resources */,
 				4B95651E20959F7F00F84294 /* Main.storyboard in Resources */,
-				4BF71ECF20C51FE600282E0F /* temp.storyboard in Resources */,
-				CCE554D320C5223F0008B6FB /* temp.storyboard in Resources */,
 				4BC1F60520A96AF600AE3A97 /* AVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
