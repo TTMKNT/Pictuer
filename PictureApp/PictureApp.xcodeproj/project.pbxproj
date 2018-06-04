@@ -16,6 +16,7 @@
 		4BEF50E22095A21D00938BBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF50DC2095A21D00938BBA /* ViewController.swift */; };
 		4BEF50E32095A21D00938BBA /* AssetGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF50DD2095A21D00938BBA /* AssetGridViewController.swift */; };
 		4BEF50E42095A21D00938BBA /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF50DE2095A21D00938BBA /* MasterViewController.swift */; };
+		CC400E5620C5204D00867D11 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC400E5520C5204D00867D11 /* Storyboard.storyboard */; };
 		CCE369D22095B7B30034E839 /* search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE369D12095B7B30034E839 /* search.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		4BEF50DC2095A21D00938BBA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4BEF50DD2095A21D00938BBA /* AssetGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGridViewController.swift; sourceTree = "<group>"; };
 		4BEF50DE2095A21D00938BBA /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		CC400E5520C5204D00867D11 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		CCE369D12095B7B30034E839 /* search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = search.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,6 +50,7 @@
 		4B95650C20959F7E00F84294 = {
 			isa = PBXGroup;
 			children = (
+				CC400E5520C5204D00867D11 /* Storyboard.storyboard */,
 				4B95651720959F7F00F84294 /* PictureApp */,
 				4B95651620959F7F00F84294 /* Products */,
 			);
@@ -141,6 +144,7 @@
 				4B95652020959F8000F84294 /* Assets.xcassets in Resources */,
 				CCE369D22095B7B30034E839 /* search.storyboard in Resources */,
 				4B95651E20959F7F00F84294 /* Main.storyboard in Resources */,
+				CC400E5620C5204D00867D11 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
