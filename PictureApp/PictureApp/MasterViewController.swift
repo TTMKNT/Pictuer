@@ -144,7 +144,7 @@ class MasterViewController: UITableViewController{
         self.tableView.rowHeight = 120
         switch Section(rawValue: indexPath.section)! {
         case .allPhotos:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "allPhotos",for : indexPath);
+            let cell = tableView.dequeueReusableCell(withIdentifier: SegueIdentifier.showAllPhotos.rawValue,for : indexPath);
             cell.textLabel!.text = NSLocalizedString("All Photos", comment: "")
           
             return cell
